@@ -5,7 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var ArticleOne: {
+var articles={
+ 'article-one': {
     title: 'Article One',
     heading:'article_one',
     date:'oct 5,2016',
@@ -19,6 +20,37 @@ var ArticleOne: {
                   <p>
                     This is the content for first webpage.This is the content for first webpage.This is the content for first webpage.This is the content for first webpage.This is the content for first webpage.
                 </p>`
+},
+ 'article-two': {
+     title: 'Article Two',
+    heading:'article_two',
+    date:'oct 5,2016',
+    content:`
+    <p>
+                    This is the content for second webpage.This is the content for first webpage.This is the content for first webpage.This is the content for first webpage.This is the content for first webpage.
+                </p>
+                  <p>
+                    This is the content for first webpage.This is the content for first webpage.This is the content for first webpage.This is the content for first webpage.This is the content for first webpage.
+                </p>
+                  <p>
+                    This is the content for first webpage.This is the content for first webpage.This is the content for first webpage.This is the content for first webpage.This is the content for first webpage.
+                </p>`
+},
+ 'article-three': {
+     title: 'Article Three',
+    heading:'article_three',
+    date:'oct 5,2016',
+    content:`
+    <p>
+                    This is the content for third webpage.This is the content for first webpage.This is the content for first webpage.This is the content for first webpage.This is the content for first webpage.
+                </p>
+                  <p>
+                    This is the content for first webpage.This is the content for first webpage.This is the content for first webpage.This is the content for first webpage.This is the content for first webpage.
+                </p>
+                  <p>
+                    This is the content for first webpage.This is the content for first webpage.This is the content for first webpage.This is the content for first webpage.This is the content for first webpage.
+                </p>`
+}
 };
 function createTemplate (data) {
    var title= data.title;
@@ -57,15 +89,9 @@ var htmlTemplate=`<html>
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-app.get('/article-one',function (req, res){
-   res.send(createTemplate(ArticleOne));
-});
-
-app.get('/article-two',function (req, res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-app.get('/article-three',function (req, res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+app.get('/:articleName',function (req, res){
+    var articleName= req.params.articleName;
+   res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/ui/style.css', function (req, res) {

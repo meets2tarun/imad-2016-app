@@ -9,7 +9,7 @@ var articles={
  'article-one': {
     title: 'Article One',
     heading:'article_one',
-    date:'oct 5,2016',
+    date:'oct 6,2016',
     content:`
     <p>
                     This is the content for first webpage.This is the content for first webpage.This is the content for first webpage.This is the content for first webpage.This is the content for first webpage.
@@ -24,7 +24,7 @@ var articles={
  'article-two': {
      title: 'Article Two',
     heading:'article_two',
-    date:'oct 5,2016',
+    date:'oct 6,2016',
     content:`
     <p>
                     This is the content for second webpage.This is the content for first webpage.This is the content for first webpage.This is the content for first webpage.This is the content for first webpage.
@@ -39,7 +39,7 @@ var articles={
  'article-three': {
      title: 'Article Three',
     heading:'article_three',
-    date:'oct 5,2016',
+    date:'oct 6,2016',
     content:`
     <p>
                     This is the content for third webpage.This is the content for first webpage.This is the content for first webpage.This is the content for first webpage.This is the content for first webpage.
